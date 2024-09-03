@@ -1,0 +1,279 @@
+/*from index header*/
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+body {
+    font-size: .875rem;
+}
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    /* rtl:raw:
+  right: 0;
+  */
+    bottom: 0;
+    /* rtl:remove */
+    left: 0;
+    z-index: 100;
+    /* Behind the navbar */
+    padding: 48px 0 0;
+    /* Height of navbar */
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        top: 5rem;
+    }
+}
+
+.nav-link {
+    font-size: 0.875rem;
+    color:#333;
+    padding-left: 1px;
+    padding-right: 1px; 
+}
+
+#TSR-tab,
+#LR-tab,
+#EVF-tab,
+#BMR-tab {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Hidden Elements */
+
+.hidden {
+    display: none;
+}
+
+/* Collapsible */
+
+.btn-toggle {
+    display: inline-flex;
+    align-items: center;
+    padding: .25rem .5rem;
+    margin-left: .55rem;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+    font-weight: 500;
+    font-size: .90rem;
+    color: #333;
+    background-color: transparent;
+    border: 0;
+}
+
+.btn-toggle:hover,
+.btn-toggle:focus {
+    color: rgba(0, 0, 0, .85);
+    background-color: #d2f4ea;
+}
+
+
+.btn-toggle::before {
+    width: 1.25em;
+    line-height: 0;
+    transition: transform .35s ease;
+    transform-origin: .5em 50%;
+}
+
+.btn-toggle[aria-expanded="true"] {
+    color: rgba(0, 0, 0, .85);
+}
+
+.btn-toggle[aria-expanded="true"]::before {
+    transform: rotate(90deg);
+}
+
+.btn-toggle-nav a {
+    display: inline-flex;
+    padding: .1875rem .5rem;
+    margin-top: .125rem;
+    margin-left: 1.25rem;
+    text-decoration: none;
+}
+
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+    background-color: #d2f4ea;
+}
+
+.btn-group #requests{
+    margin-top: .25rem;
+}
+
+/* Form */
+
+.top-buffer {
+    margin-top: 10px;
+}
+
+.form-row #log_req1,
+.form-row #log_req2,
+.form-row #log_req3,
+.form-row #log_req4,
+.form-row #log_req5 {
+    border: 1px solid #333;
+    border-radius: 5px;
+    border-spacing: 5px;
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+}
+
+
+
+.accordion-button {
+    padding: 0.5rem;
+    border: none; 
+}
+
+/*.card #cardAck {
+    border-block-start-width: 25rem;
+    border-block-start-color: green;
+}*/
+
+#pieChart {
+    height: 200px;
+    width: 100%;
+}
+
+.stretch-link {
+    background-color: none;
+    border: none;
+    padding: none;
+    margin: none;
+}
+
+.rounded-circle {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
+    border-color: gray;
+    object-fit: cover;
+}
+ 
+p {
+    display: inline;
+    padding: 3.5px;
+}
+
+#wrapper {
+    overflow-x: hidden;
+  }
+  
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -10rem;
+    transition: margin 0.25s ease-out;
+  }
+  
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1rem;
+    font-size: 1.2rem;
+  }
+  
+  #sidebar-wrapper .nav-item {
+    width: 8rem;
+    padding-left: 4.5px;
+    padding-right: 4.5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 1rem
+  }
+  
+  #page-content-wrapper {
+    min-width: 100vw;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  
+  body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: 0;
+  }
+  
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+  
+    body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+      margin-left: -10rem;
+    }
+  }
+
+  .list-group-item {
+      border: none;
+  }
+
+.sidebarToggle {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  /*this is specially for buttons formulated by Ivan
+*/
+.btsbiot {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>eTSR - Login</title>
+        <link rel="icon" href="../assets/dist/img/logo2.png"/>
+        <link rel="stylesheet" href="../assets/dist/css/bootstrap.min.css"/>
+        <script src="../assets/dist/js/jquery.min.js"></script>
+        <script src="../assets/service/service.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-md-6 text-center">
+                    <img src="../assets/dist/img/logo2.png" height="100px" width="100px">
+                    <h2>Login</h2>
+                    <p>Please fill in your email and password.</p>
+                    <form id="form_id">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="from-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" id="login"> Login </button>
+                        </div>
+                        <p>Don't have an account or having problems? email us <a href="mailto:PCT-SMX_ADGT_TestEngSupport@analog.com">here</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $('#form_id').submit(function(event){
+            event.preventDefault();
+
+            var formObj = formToObject('form_id');
+            var promise = post('../../backend/login/loginController.php', formObj);
+            promise.then(function (data) {
+                var ret = JSON.parse(data);
+                if(ret.code == 200) {
+                    if (ret.isOk) {
+                        //alert(ret.msg);
+                        window.location.href = ret.page;   //redirect to page
+                    } else {
+                        alert(ret.msg);
+                    }
+                } 
+            });
+        });
+    </script>
+</html>

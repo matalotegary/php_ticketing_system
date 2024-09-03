@@ -1,0 +1,724 @@
+<!-- Start Modal -->
+                         <!-- <form action="../../backend/lrForm/lrInsertController.php" method="POST"> -->
+                          <div class="modal fade" id="LR_Req_show1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h4 class="modal-title" id="newRequestLR">New Logistics Request</h4>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="form_lr_id">                     
+                                      <div class="container">
+                                        <div class="form-row row">
+                                          <div class="col-md">
+                                            <label for="lrReqTitle">Request Title</label>
+                                            <input type="text" class="form-control" id="lrReqTitle" name="lrReqTitle" placeholder="Request Title">
+                                          </div>
+                                        </div>
+                                        <div class="form-row row">
+                                          <div class="form-group col-md-6">
+                                            <label for="requestor_lr">Requestor</label>
+                                            <input type="text" class="form-control" id="requestor_lr" name="requestor_lr" placeholder="Requestor"  required>
+                                          </div>
+                                          <div class="form-group col-md-6">
+                                            <label for="strategy_lr">Focus Group/B.U.</label>
+                                            <input type="text" class="form-control" id="strategy_lr" name="strategy_lr" placeholder="Focus Group/B.U." >  <!--disabled -->
+                                          </div>
+                                        </div>                                
+                                        <div class="form-row row">
+                                          <div class="form-group col-md-3">
+                                            <label for="ple_prj_lr">PLE Project</label>
+                                            <input type="text" class="form-control" id="ple_prj_lr" name="ple_prj_lr">
+                                          </div>  
+                                          <div class="form-group col-md-3">
+                                            <label for="generic_lr">Generic</label>
+                                            <input type="text" class="form-control" id="generic_lr" name="generic_lr">
+                                          </div>                                                      
+                                          <div class="form-group col-md-3">
+                                            <label for="inputPriority_lr">Priority</label>
+                                            <select class="form-control" id="inputPriority_lr" name="inputPriority_lr" required>
+                                              <option selected>Choose...</option>
+                                              <option id="prioHigh">High</option>
+                                              <option id="prioMed">Medium</option>
+                                              <option id="prioLow">Low</option>
+                                            </select>
+                                          </div>
+                                          <div class="form-group col-md-3">
+                                            <label for="mobile_number_lr">Mobile Number</label>
+                                            <input type="text" class="form-control" id="mobile_number_lr" name="mobile_number_lr" >
+                                          </div>  <!--disabled -->
+                                        </div>                                                                
+                                        <div class="form-row row">
+                                          <div class="form-group col-md-4">
+                                            <label for="date_opened_lr">Date Opened</label>
+                                            <input type="date" class="form-control" id="date_opened_lr"  name="date_opened_lr" > <!--disabled -->
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="date_required_lr">Date Required</label>
+                                            <input type="date" class="form-control" id="date_required_lr" name="date_required_lr" required>
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="start_time_lr">start_time_lr Time</label>
+                                            <input type="time" class="form-control" id="start_time_lr" name="start_time_lr" required>
+                                          </div>                                      
+                                          
+                                        </div>
+                                        <div class="form-container">
+                                          <div id="myLR" class="form-row">
+                                            <div>
+                                              <p>
+                                                <i>
+                                                <b>Notes:</b>
+                                                <br />
+                                                For <b>Shipment</b>: Please provide complete shipping details (Attention to, Address, Cost Center, etc...).
+                                                <br />
+                                                For <b>Endorsement/Pickup</b>: Please indicate location and contact persons.
+                                                </i>
+                                              </p>
+                                            </div>                                        
+                                            <div class="form-container">
+                                              <div class="form-row" id="log_req1" name="log_req1">                                            
+                                                <label for="log_req1"><b>Logistic Request 1:</b></label>
+                                                  <div class="form-row row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="lr1">Type of Logistic:</label>
+                                                        <select class="form-control" id="lr1" name="lr1" required>
+                                                          <option selected>Choose...</option>
+                                                          <option>Borrow/Retrieve</option>
+                                                          <option>Endorsement/Return</option>
+                                                          <option>Shipment</option>
+                                                          <option>Withdraw</option>
+                                                          <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_req1_lr">Other Request</label>
+                                                        <input type="text" class="form-control" id="other_req1_lr" name="other_req1_lr" placeholder="Specify">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="material1_lr">Material:</label>
+                                                        <select class="form-control" id="material1_lr" name="material1_lr" required>
+                                                          <option selected>Choose...</option>
+                                                          <option>Lot - Packaged</option>
+                                                          <option>Lot - Wafer</option>
+                                                          <option>IC - Component</option>
+                                                          <option>FT Board</option>
+                                                          <option>Probe Interface Board</option>
+                                                          <option>Probe Card</option>
+                                                          <option>Cardlet</option>
+                                                          <option>Contactor</option>
+                                                          <option>Actuator</option>
+                                                          <option>Conversion Kit</option>
+                                                          <option>CUH</option>
+                                                          <option>Containers - Trays/Tubes</option>
+                                                          <option>Others</option>                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_mat1_lr">Other Material</label>
+                                                        <input type="text" class="form-control" id="other_mat1_lr" name="other_mat1_lr" placeholder="Specify">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-row row">
+                                                    <div class="form-group">
+                                                      <label for="notes1_lr">Special Instructions/Notes:</label>
+                                                      <textarea class="form-control"  id="notes1_lr" name="notes1_lr" rows="3" required></textarea>
+                                                    </div>
+                                                  </div>                                           
+                                              </div>
+                                              <div class="form-row top-buffer" id="log_req2" name="log_req2">                                            
+                                                <label for="log_req2"><b>Logistic Request 2:</b></label>
+                                                  <div class="form-row row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="lr2">Type of Logistic:</label>
+                                                        <select class="form-control" id="lr2" name="lr2" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Borrow/Retrieve</option>
+                                                          <option>Endorsement/Return</option>
+                                                          <option>Shipment</option>
+                                                          <option>Withdraw</option>
+                                                          <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_req2_lr">Other Request</label>
+                                                        <input type="text" class="form-control" id="other_req2_lr" name="other_req2_lr" placeholder="Specify">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="material2_lr">Material:</label>
+                                                        <select class="form-control" id="material2_lr" name="material2_lr" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Lot - Packaged</option>
+                                                          <option>Lot - Wafer</option>
+                                                          <option>IC - Component</option>
+                                                          <option>FT Board</option>
+                                                          <option>Probe Interface Board</option>
+                                                          <option>Probe Card</option>
+                                                          <option>Cardlet</option>
+                                                          <option>Contactor</option>
+                                                          <option>Actuator</option>
+                                                          <option>Conversion Kit</option>
+                                                          <option>CUH</option>
+                                                          <option>Containers - Trays/Tubes</option>
+                                                          <option>Others</option>                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_mat2_lr">Other Material</label>
+                                                        <input type="text" class="form-control" id="other_mat2_lr" name="other_mat2_lr" placeholder="Specify">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-row row">
+                                                    <div class="form-group">
+                                                      <label for="notes2_lr">Special Instructions/Notes:</label>
+                                                      <textarea class="form-control" id="notes2_lr" name="notes2_lr" rows="3" ></textarea>
+                                                    </div>
+                                                  </div>                                           
+                                              </div>
+                                              <div class="form-row top-buffer" id="log_req3" name="log_req3">                                            
+                                                <label for="log_req3"><b>Logistic Request 3:</b></label>
+                                                  <div class="form-row row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="lr3">Type of Logistic:</label>
+                                                        <select class="form-control" id="lr3" name="lr3" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Borrow/Retrieve</option>
+                                                          <option>Endorsement/Return</option>
+                                                          <option>Shipment</option>
+                                                          <option>Withdraw</option>
+                                                          <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_req3_lr">Other Request</label>
+                                                        <input type="text" class="form-control" id="other_req3_lr" name="other_req3_lr" placeholder="Specify">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="material3_lr">Material:</label>
+                                                        <select class="form-control" id="material3_lr" name="material3_lr" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Lot - Packaged</option>
+                                                          <option>Lot - Wafer</option>
+                                                          <option>IC - Component</option>
+                                                          <option>FT Board</option>
+                                                          <option>Probe Interface Board</option>
+                                                          <option>Probe Card</option>
+                                                          <option>Cardlet</option>
+                                                          <option>Contactor</option>
+                                                          <option>Actuator</option>
+                                                          <option>Conversion Kit</option>
+                                                          <option>CUH</option>
+                                                          <option>Containers - Trays/Tubes</option>
+                                                          <option>Others</option>                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_mat3_lr">Other Material</label>
+                                                        <input type="text" class="form-control" id="other_mat3_lr" name="other_mat3_lr" placeholder="Specify">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-row row">
+                                                    <div class="form-group">
+                                                      <label for="notes3_lr">Special Instructions/Notes:</label>
+                                                      <textarea class="form-control" id="notes3_lr" name="notes3_lr" rows="3" ></textarea>
+                                                    </div>
+                                                  </div>                                           
+                                              </div>
+                                              <div class="form-row top-buffer" id="log_req4" name="log_req4">                                            
+                                                <label for="log_req4"><b>Logistic Request 4:</b></label>
+                                                  <div class="form-row row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="lr4">Type of Logistic:</label>
+                                                        <select class="form-control" id="lr4" name="lr4" required>
+                                                          <option selected>Choose...</option>
+                                                          <option>Borrow/Retrieve</option>
+                                                          <option>Endorsement/Return</option>
+                                                          <option>Shipment</option>
+                                                          <option>Withdraw</option>
+                                                          <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_req4_lr">Other Request</label>
+                                                        <input type="text" class="form-control" id="other_req4_lr" name="other_req4_lr" placeholder="Specify">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="material4_lr">Material:</label>
+                                                        <select class="form-control" id="material4_lr" name="material4_lr" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Lot - Packaged</option>
+                                                          <option>Lot - Wafer</option>
+                                                          <option>IC - Component</option>
+                                                          <option>FT Board</option>
+                                                          <option>Probe Interface Board</option>
+                                                          <option>Probe Card</option>
+                                                          <option>Cardlet</option>
+                                                          <option>Contactor</option>
+                                                          <option>Actuator</option>
+                                                          <option>Conversion Kit</option>
+                                                          <option>CUH</option>
+                                                          <option>Containers - Trays/Tubes</option>
+                                                          <option>Others</option>                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_mat4_lr">Other Material</label>
+                                                        <input type="text" class="form-control" id="other_mat4_lr" name="other_mat4_lr" placeholder="Specify">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-row row">
+                                                    <div class="form-group">
+                                                      <label for="notes4_lr">Special Instructions/Notes:</label>
+                                                      <textarea class="form-control" id="notes4_lr" name="notes4_lr" rows="3" ></textarea>
+                                                    </div>
+                                                  </div>                                           
+                                              </div>
+                                              <div class="form-row top-buffer" id="log_req5" name="log_req5">                                            
+                                                <label for="log_req5"><b>Logistic Request 5:</b></label>
+                                                  <div class="form-row row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="lr5">Type of Logistic:</label>
+                                                        <select class="form-control" id="lr5" name="lr5" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Borrow/Retrieve</option>
+                                                          <option>Endorsement/Return</option>
+                                                          <option>Shipment</option>
+                                                          <option>Withdraw</option>
+                                                          <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_req5_lr">Other Request</label>
+                                                        <input type="text" class="form-control" id="other_req5_lr" name="other_req5_lr" placeholder="Specify">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="material5_lr">Material:</label>
+                                                        <select class="form-control" id="material5_lr" name="material5_lr" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Lot - Packaged</option>
+                                                          <option>Lot - Wafer</option>
+                                                          <option>IC - Component</option>
+                                                          <option>FT Board</option>
+                                                          <option>Probe Interface Board</option>
+                                                          <option>Probe Card</option>
+                                                          <option>Cardlet</option>
+                                                          <option>Contactor</option>
+                                                          <option>Actuator</option>
+                                                          <option>Conversion Kit</option>
+                                                          <option>CUH</option>
+                                                          <option>Containers - Trays/Tubes</option>
+                                                          <option>Others</option>                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_mat5_lr">Other Material</label>
+                                                        <input type="text" class="form-control" id="other_mat5_lr" name="other_mat5_lr" placeholder="Specify">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-row row">
+                                                    <div class="form-group">
+                                                      <label for="notes5_lr">Special Instructions/Notes:</label>
+                                                      <textarea class="form-control" id="notes5_lr" name="notes5_lr" rows="3" ></textarea>
+                                                    </div>
+                                                  </div>                                           
+                                              </div>      
+                                            </div>
+                                          </div>
+                                        </div>                                                                                                                                                   
+                                        <div class="form-row row">
+                                          <div class="form-group col-md-12">
+                                            <label for="myFile_lr">Attach Files...</label>
+                                            <input type="file" class="form-control" id="myFile_lr">
+                                          </div>
+                                        </div>
+                                        <div class="form-row row">
+                                          <div class="form-group">
+                                            <label for="special_instructions_lr">Special Instructions</label>
+                                            <textarea class="form-control" id="special_instructions_lr" name="special_instructions_lr" rows="3"></textarea>
+                                          </div>
+                                        </div>                                
+                                      </div> 
+                                      <div class="form-row group" align="right">
+                                        <button class="btsbiot"><img src="../assets/dist/img/btn/add.png" height="25px" width="25px" onclick="add_los()"></button>
+                                        <button class="btsbiot"><img src="../assets/dist/img/btn/remove.png" height="25px" width="25px" onclick="rem_los()"></button>
+                                        <button type="submit" class="btn btn-primary" name="submitForm_lr" value="Submit">Submit</button> 
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>      
+                                      </div>
+                                     </form>          
+                                </div>
+                                <div class="modal-footer">
+                                  
+                                </div>
+                               
+                              </div>
+                            </div>
+                          </div>
+                          <!-- End Modal -->
+
+                          <!--======================================Start Modal for Logistic Active ========================================-->
+                         <div class="modal fade" id="LR_Req_active" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h4 class="modal-title" id="newRequestLR_active">Active Logistics Request</h4>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <form id="form_lr_active">                               
+                                      <div class="container">
+                                         <div class="form-row row">
+                                          <div class="col-md">
+                                           <input type="hidden" id="id_lr_active" name="id_lr_active"/>
+                                          </div>
+                                        </div>
+                                              <div class="form-row row">
+                                          <div class="col-md">
+                                            <label for="lrReqTitle_active">Request Title</label>
+                                            <input type="text" class="form-control" id="lrReqTitle_active" name = "lrReqTitle_active" placeholder="Request Title">
+                                          </div>
+                                        </div>
+                                        <div class="form-row row">
+                                          <div class="form-group col-md-6">
+                                            <label for="requestor_lr_active">Requestor</label>
+                                            <input type="text" class="form-control" id="requestor_lr_active" name="requestor_lr_active" placeholder="Requestor" >
+                                          </div>
+                                          <div class="form-group col-md-6">
+                                            <label for="strategy_lr_active">Focus Group/B.U.</label>
+                                            <input type="text" class="form-control" id="strategy_lr_active" name="strategy_lr_view" placeholder="Focus Group/B.U." disabled>
+                                          </div>
+                                        </div>                                
+                                        <div class="form-row row">
+                                          <div class="form-group col-md-3">
+                                            <label for="ple_prj_lr_active">PLE Project</label>
+                                            <input type="text" class="form-control" id="ple_prj_lr_active" name="ple_prj_lr_active">
+                                          </div>  
+                                          <div class="form-group col-md-3">
+                                            <label for="generic_lr_active">Generic</label>
+                                            <input type="text" class="form-control" id="generic_lr_active" name="generic_lr_active">
+                                          </div>                                                      
+                                          <div class="form-group col-md-3">
+                                            <label for="inputPriority_lr_active">Priority</label>
+                                            <select class="form-control" id="inputPriority_lr_active" name="inputPriority_lr_active" >
+                                              <option selected>Choose...</option>
+                                              <option id="prioHigh">High</option>
+                                              <option id="prioMed">Medium</option>
+                                              <option id="prioLow">Low</option>
+                                            </select>
+                                          </div>
+                                          <div class="form-group col-md-3">
+                                            <label for="mobile_number_lr_active">Mobile Number</label>
+                                            <input type="text" class="form-control" id="mobile_number_lr_active" name="mobile_number_lr_active" disabled>
+                                          </div>
+                                        </div>                                                                
+                                        <div class="form-row row">
+                                          <div class="form-group col-md-4">
+                                            <label for="date_opened_lr_active">Date Opened</label>
+                                            <input type="date" class="form-control" id="date_opened_lr_active"  name="date_opened_lr_active" disabled>
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="date_required_lr_active">Date Required</label>
+                                            <input type="date" class="form-control" id="date_required_lr_active" name="date_required_lr_active" >
+                                          </div>
+                                          <div class="form-group col-md-4">
+                                            <label for="start_time_lr_active">Start Time</label>
+                                            <input type="time" class="form-control" id="start_time_lr_active" name="start_time_lr_active" >
+                                          </div>                                      
+                                          
+                                        </div>
+                                        <div class="form-container">
+                                          <div id="myLR" class="form-row">
+                                            <div>
+                                              <p>
+                                                <i>
+                                                <b>Notes:</b>
+                                                <br />
+                                                For <b>Shipment</b>: Please provide complete shipping details (Attention to, Address, Cost Center, etc...).
+                                                <br />
+                                                For <b>Endorsement/Pickup</b>: Please indicate location and contact persons.
+                                                </i>
+                                              </p>
+                                            </div>                                        
+                                            <div class="form-container">
+                                              <div class="form-row" id="log_req1_active" name="log_req1_active">                                            
+                                                <label for="log_req1_active"><b>Logistic Request 1:</b></label>
+                                                  <div class="form-row row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="lr1_active">Type of Logistic:</label>
+                                                        <select class="form-control" id="lr1_active" name="lr1_active" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Borrow/Retrieve</option>
+                                                          <option>Endorsement/Return</option>
+                                                          <option>Shipment</option>
+                                                          <option>Withdraw</option>
+                                                          <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_req1_lr_active">Other Request</label>
+                                                        <input type="text" class="form-control" id="other_req1_lr_active" name="other_req1_lr_active" placeholder="Specify">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="material1_lr_active">Material:</label>
+                                                        <select class="form-control" id="material1_lr_active" name="material1_lr_active" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Lot - Packaged</option>
+                                                          <option>Lot - Wafer</option>
+                                                          <option>IC - Component</option>
+                                                          <option>FT Board</option>
+                                                          <option>Probe Interface Board</option>
+                                                          <option>Probe Card</option>
+                                                          <option>Cardlet</option>
+                                                          <option>Contactor</option>
+                                                          <option>Actuator</option>
+                                                          <option>Conversion Kit</option>
+                                                          <option>CUH</option>
+                                                          <option>Containers - Trays/Tubes</option>
+                                                          <option>Others</option>                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_mat1_lr_active">Other Material</label>
+                                                        <input type="text" class="form-control" id="other_mat1_lr_active" name="other_mat1_lr_active" placeholder="Specify">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-row row">
+                                                    <div class="form-group">
+                                                      <label for="notes1_lr_active">Special Instructions/Notes:</label>
+                                                      <textarea class="form-control"  id="notes1_lr_active" name="notes1_lr_active" rows="3" ></textarea>
+                                                    </div>
+                                                  </div>                                           
+                                              </div>
+                                              <div class="form-row top-buffer" id="log_req2" name="log_req2">                                            
+                                                <label for="log_req2_active"><b>Logistic Request 2:</b></label>
+                                                  <div class="form-row row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="lr2_active">Type of Logistic:</label>
+                                                        <select class="form-control" id="lr2_active" name="lr2_active" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Borrow/Retrieve</option>
+                                                          <option>Endorsement/Return</option>
+                                                          <option>Shipment</option>
+                                                          <option>Withdraw</option>
+                                                          <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_req2_lr_active">Other Request</label>
+                                                        <input type="text" class="form-control" id="other_req2_lr_active" name="other_req2_lr_active" placeholder="Specify">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="material2_lr_active">Material:</label>
+                                                        <select class="form-control" id="material2_lr_active" name="material2_lr_active" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Lot - Packaged</option>
+                                                          <option>Lot - Wafer</option>
+                                                          <option>IC - Component</option>
+                                                          <option>FT Board</option>
+                                                          <option>Probe Interface Board</option>
+                                                          <option>Probe Card</option>
+                                                          <option>Cardlet</option>
+                                                          <option>Contactor</option>
+                                                          <option>Actuator</option>
+                                                          <option>Conversion Kit</option>
+                                                          <option>CUH</option>
+                                                          <option>Containers - Trays/Tubes</option>
+                                                          <option>Others</option>                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_mat2_lr_active">Other Material</label>
+                                                        <input type="text" class="form-control" id="other_mat2_lr_active" name="other_mat2_lr_active" placeholder="Specify">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-row row">
+                                                    <div class="form-group">
+                                                      <label for="notes2_lr_active">Special Instructions/Notes:</label>
+                                                      <textarea class="form-control" id="notes2_lr_active" name="notes2_lr_active" rows="3" ></textarea>
+                                                    </div>
+                                                  </div>                                           
+                                              </div>
+                                              <div class="form-row top-buffer" id="log_req3_view" name="log_req3_view">                                            
+                                                <label for="log_req3_active"><b>Logistic Request 3:</b></label>
+                                                  <div class="form-row row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="lr3_active">Type of Logistic:</label>
+                                                        <select class="form-control" id="lr3_active" name="lr3_active" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Borrow/Retrieve</option>
+                                                          <option>Endorsement/Return</option>
+                                                          <option>Shipment</option>
+                                                          <option>Withdraw</option>
+                                                          <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_req3_lr_active">Other Request</label>
+                                                        <input type="text" class="form-control" id="other_req3_lr_active" name="other_req3_lr_active" placeholder="Specify">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="material3_lr_active">Material:</label>
+                                                        <select class="form-control" id="material3_lr_active" name="material3_lr_active" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Lot - Packaged</option>
+                                                          <option>Lot - Wafer</option>
+                                                          <option>IC - Component</option>
+                                                          <option>FT Board</option>
+                                                          <option>Probe Interface Board</option>
+                                                          <option>Probe Card</option>
+                                                          <option>Cardlet</option>
+                                                          <option>Contactor</option>
+                                                          <option>Actuator</option>
+                                                          <option>Conversion Kit</option>
+                                                          <option>CUH</option>
+                                                          <option>Containers - Trays/Tubes</option>
+                                                          <option>Others</option>                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_mat3_lr_active">Other Material</label>
+                                                        <input type="text" class="form-control" id="other_mat3_lr_active" name="other_mat3_lr_active" placeholder="Specify">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-row row">
+                                                    <div class="form-group">
+                                                      <label for="notes3_lr_active">Special Instructions/Notes:</label>
+                                                      <textarea class="form-control" id="notes3_lr_active" name="notes3_lr_active" rows="3" ></textarea>
+                                                    </div>
+                                                  </div>                                           
+                                              </div>
+                                              <div class="form-row top-buffer" id="log_req4_view" name="log_req4_view">                                            
+                                                <label for="log_req4_active"><b>Logistic Request 4:</b></label>
+                                                  <div class="form-row row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="lr4_active">Type of Logistic:</label>
+                                                        <select class="form-control" id="lr4_active" name="lr4_active" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Borrow/Retrieve</option>
+                                                          <option>Endorsement/Return</option>
+                                                          <option>Shipment</option>
+                                                          <option>Withdraw</option>
+                                                          <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_req4_lr_active">Other Request</label>
+                                                        <input type="text" class="form-control" id="other_req4_lr_active" name="other_req4_lr_active" placeholder="Specify">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="material4_lr_active">Material:</label>
+                                                        <select class="form-control" id="material4_lr_active" name="material4_lr_active" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Lot - Packaged</option>
+                                                          <option>Lot - Wafer</option>
+                                                          <option>IC - Component</option>
+                                                          <option>FT Board</option>
+                                                          <option>Probe Interface Board</option>
+                                                          <option>Probe Card</option>
+                                                          <option>Cardlet</option>
+                                                          <option>Contactor</option>
+                                                          <option>Actuator</option>
+                                                          <option>Conversion Kit</option>
+                                                          <option>CUH</option>
+                                                          <option>Containers - Trays/Tubes</option>
+                                                          <option>Others</option>                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_mat4_lr_active">Other Material</label>
+                                                        <input type="text" class="form-control" id="other_mat4_lr_active" name="other_mat4_lr_active" placeholder="Specify">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-row row">
+                                                    <div class="form-group">
+                                                      <label for="notes4_lr_active">Special Instructions/Notes:</label>
+                                                      <textarea class="form-control" id="notes4_lr_active" name="notes4_lr_active" rows="3" ></textarea>
+                                                    </div>
+                                                  </div>                                           
+                                              </div>
+                                              <div class="form-row top-buffer" id="log_req5_active" name="log_req5_view">                                            
+                                                <label for="log_req5_active"><b>Logistic Request 5:</b></label>
+                                                  <div class="form-row row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="lr5_active">Type of Logistic:</label>
+                                                        <select class="form-control" id="lr5_active" name="lr5_active" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Borrow/Retrieve</option>
+                                                          <option>Endorsement/Return</option>
+                                                          <option>Shipment</option>
+                                                          <option>Withdraw</option>
+                                                          <option>Others</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_req5_lr_active">Other Request</label>
+                                                        <input type="text" class="form-control" id="other_req5_lr_active" name="other_req5_lr_active" placeholder="Specify">
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label for="material5_lr_active">Material:</label>
+                                                        <select class="form-control" id="material5_lr_active" name="material5_lr_active" >
+                                                          <option selected>Choose...</option>
+                                                          <option>Lot - Packaged</option>
+                                                          <option>Lot - Wafer</option>
+                                                          <option>IC - Component</option>
+                                                          <option>FT Board</option>
+                                                          <option>Probe Interface Board</option>
+                                                          <option>Probe Card</option>
+                                                          <option>Cardlet</option>
+                                                          <option>Contactor</option>
+                                                          <option>Actuator</option>
+                                                          <option>Conversion Kit</option>
+                                                          <option>CUH</option>
+                                                          <option>Containers - Trays/Tubes</option>
+                                                          <option>Others</option>                                                
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="other_mat5_lr_active">Other Material</label>
+                                                        <input type="text" class="form-control" id="other_mat5_lr_active" name="other_mat5_lr_active" placeholder="Specify">
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-row row">
+                                                    <div class="form-group">
+                                                      <label for="notes5_lr_active">Special Instructions/Notes:</label>
+                                                      <textarea class="form-control" id="notes5_lr_active" name="notes5_lr_active" rows="3" ></textarea>
+                                                    </div>
+                                                  </div>                                           
+                                              </div>      
+                                            </div>
+                                          </div>
+                                        </div>                                                                                                                                                   
+                                        <div class="form-row row">
+                                          <div class="form-group col-md-12">
+                                            <label for="myFile_lr_active">Attach Files...</label>
+                                            <input type="file" class="form-control" id="myFile_lr_active" name=myFile_lr_active>
+                                          </div>
+                                        </div>
+                                        <div class="form-row row">
+                                          <div class="form-group">
+                                            <label for="special_instructions_lr_active">Special Instructions</label>
+                                            <textarea class="form-control" id="special_instructions_lr_active"  name=special_instructions_lr_active rows="3"></textarea>
+                                          </div>
+                                        </div>                                
+                                      </div> 
+                     <div class="form-row row " align="right">
+                          <div class="form-group">
+                       <button class="btsbiot"><img src="../assets/dist/img/btn/add.png" height="25" width="25" onclick="add_los()"></button>
+                       <button class="btsbiot"><img src="../assets/dist/img/btn/remove.png" height="25" width="25" onclick="rem_los()"></button>
+                          <button type="submit" class="btn btn-primary" id="button_lr_view_active"  value="Submit">Acknowledge</button> 
+                      <!-- <button class="btn btn-primary" type="submit" id="button_lr_view_acknowledge">Acknowledge Request</button>
+                       <button class="btn btn-primary" id="button_lr_view_active">Active Request</button>
+                       <button class="btn btn-primary" id="button_lr_view_close">Close Request</button>
+                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+                        </div>
+                     </div>
+                                  </form>                              
+                                </div>
+                                <div class="modal-footer">
+                   
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+        <!-- ======================End Modal For Logistic Active ================================================-->
